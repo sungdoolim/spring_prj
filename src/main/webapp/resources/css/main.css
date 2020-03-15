@@ -1,0 +1,415 @@
+@CHARSET "UTF-8";
+
+body{
+	background-color:#898989; 
+	margin:0px; padding:0px;
+	font-size:0.75em; line-height:1.2em;/*수직높이*/
+	color:#333;
+}
+#wrap{
+	width:971px; text-align:left;/*글자를 좌우수평에서 좌
+	측정렬*/
+	margin:0px; 
+	margin-left:auto; margin-right:auto;
+	/*div 좌우 수평 중앙정렬 */
+	background-image:url(/resources/images/shadow.png);
+	/*배경이미지 설정*/
+	background-repeat:repeat-y;/*배경이미지가 수직 즉 y축
+	으로 반복*/
+	min-height:960px;/*최소높이*/
+}
+header{
+	height:151px;
+}
+#logo{
+    float:left;/*회사로고 이미지가 왼쪽에 배치*/
+    width:265px; 
+    margin:60px 0px 0px 40px;/*시계방향으로 바깥위,오른
+    쪽,아래쪽,왼쪽 바깥여백을 동시에 지정*/	
+}
+nav{
+  width:600px; float:right;/*오른쪽에 배치*/
+  margin:77px 60px 0px 0px;	
+}
+nav ul{
+	list-style:none; /*목록앞 점 없앰*/
+	font-family:굴림체; font-size:16px;
+	font-weight:bold;/*글자를 진하게*/
+	color:#333;/*글자색*/
+}
+nav ul li{
+	float:left;/*수직정렬을 수평으로 배치*/ 
+	margin:0px 10px;/*상하 바깥상단 여백을 0픽셀,좌우 바깥
+	여백을 10픽셀*/
+}
+nav a{
+    display:block;/*하이퍼링크 태그는 내용물 크기만큼만 차
+    지하는 인라인 요소 태그이다.이것을 블록요소 태그로 바꿈
+    */
+    height:20px; padding:1px;/*상하좌우 안여백을 동시지
+    정*/
+    text-decoration:none;/*하이퍼링크가 걸리면 기본으로 
+    밑줄선이 만들어 진다.밑줄선을 사라지게 함*/
+    color:#333;	
+}
+nav a:hover{/*:hover는 마우스 오버시 css효과*/
+	background-image:url(../images/blue.gif);
+	background-repeat:repeat-x;/*수평으로 반복*/
+	background-position:bottom;/*아래쪽에 배치*/
+}
+.clear{
+    clear:both;/*float속성을 제거해서 잘못된 ui적용을
+    막아줌*/	
+}
+#login{
+    float:right; margin:20px 64px 0px 0px;
+    font-family:궁서체; font-size:12px;
+    word-spacing:5px;/*자간 간격*/	
+}
+#login a{
+    text-decoration:none;/*하이퍼링크 된곳 밑줄선제거*/
+    color:#333;	
+}
+#login a:hover{color:#F90;}
+
+/*메인이미지 */
+#main_img{
+	width:971px; height:308px;
+	background-image:url(/resources/images/img_back.png);
+	background-repeat:no-repeat;/*이미지 반복 없음*/
+	background-position:center top;/*위쪽 중앙에 배치*/
+}
+#main_img img{
+	margin:9px 0px 0px 0px;
+}
+article#front{
+	margin:5px 0 5px 0;
+}
+#solution{
+    border:1px solid #FFFFFF; border-radius:10px;/*테두리
+    를 둥글게 */
+    width:910px; min-height:150px; background:#ebebeb;
+    padding:10px; margin:0 0 0 20px;	
+}
+#hosting,#security,#payment{
+	width:30%;  float:left;/*div 수직정렬을 수평정렬로
+	바꾼다.*/ padding:10px;
+}
+/*글꼴지정 */
+@font-face { font-family:"seo";     
+   src:url("/resources/images/segoeui.eot");             
+   src:local("☺"), url("/resources/images/segoeui.woff")  format("woff"), 
+   url("/resources/images/segoeui.ttf") format("truetype");  
+}
+
+#hosting h3,#security h3, #payment h3{
+	font-family:seo; font-size:14px;
+	color:#333; font-weight:600;
+	margin:0px 0px 10px 80px;
+}
+#hosting p,#security p,#payment p{
+	font-family:seo; font-size:12px;
+	color:#333;
+	margin:0px 0px 0px 80px;
+}
+#hosting{
+	background-image:url(/resources/images/icon1.png);
+	background-repeat:no-repeat; 
+	background-position:left 15px;
+	border-right:1px solid #ccc;/*오른쪽 구분선*/
+}
+#security{
+	background-image:url(/resources/images/icon2.png);
+	background-repeat:no-repeat; 
+	background-position:left 15px;
+	border-right:1px solid #ccc; margin-left:12px;
+}
+#payment{
+	background-image:url(/resources/images/icon3.png);
+	background-repeat:no-repeat; 
+	background-position:left 15px;margin-left:12px;
+}
+#sec_news, #news_notice{
+	float:left; width:420px;
+	margin:15px 0px 0px 20px;
+}
+#sec_news h3, #news_notice h3{
+	font-family:seo; font-size:14px; 
+	font-style:italic;/*기울임*/
+	font-weight:bold; width:420px; height:24px;
+	background-image:url(/resources/images/h3_back.jpg);
+	background-repeat:no-repeat; padding:5px 0 0 22px;
+}
+#sec_news .orange{
+	color:#f26522;
+}
+#news_notice .brown{
+	color:#827b00;
+}
+#sec_news dl{
+	margin-left:6px;
+}
+#sec_news dt{font-size:16px; margin:5px 0; color:#f00;}
+#sec_news dd{margin-left:0;/*dd태그의 특징인 들여쓰기가
+사라짐*/ color:#333;}
+
+#sec_news dt a{
+	text-decoration:none; color:#F00;
+}
+#sec_news dt a:hover{
+	text-decoration:underline; color:#F90;
+}
+#sec_news dd a{
+	text-decoration:none; color:#333;
+}
+#sec_news dd a:hover{
+	text-decoration:underline; color:#F90;
+}
+
+#news_notice table{
+	width:400px; border-collapse:collapse;/*테두리 공간을
+	없앰*/
+	text-align:center;/*글자를 수평중앙정렬*/
+}
+#news_notice td{
+	border-bottom-width:1px;/*밑줄선두께*/
+	border-bottom-style: dotted;/*밑줄선 점선*/
+	border-bottom-color: #999; /* 밑줄선 색*/
+	padding:6px 4px;/*상하 안여백을 6픽셀,좌우 안여백을
+	4픽셀*/
+}
+#news_notice td.context{
+   	text-align:left; padding-left:15px;/*안왼쪽 여백*/
+   	color:#333;
+   	background-image:url(/resources/images/tr_back.gif);
+   	background-repeat:no-repeat;
+   	background-position:left center;
+}
+#news_notice a{
+	text-decoration:none; color:#333;
+}
+#news_notice a:hover{
+	text-decoration:none; color:#F90;
+}
+footer{
+	height:80px; margin:50px 0 0 0;
+	background-image:url(/resources/images/under_logo.gif);
+	background-repeat:no-repeat;
+	background-position: 40px center;;
+}
+footer hr{
+	width:900px; margin:0 0 0 30px;
+}
+footer #copy{
+    float:left; width:450px; font-family:seo;
+    margin:20px 0 0 190px;	
+}
+footer #social{
+	float:right; width:130px; margin:20px 20px 0 0;
+}
+footer #social img{margin:0 7px;/*이미지 좌우 바깥여백*/}
+
+/* s3Silder */
+#s3slider { 
+   width: 971px; /* important to be same as image width */ 
+   height: 308px; /* important to be same as image height */
+    position: relative; /* important */
+    overflow: hidden; /* important */
+ }
+
+#s3sliderContent {
+    width: 971px; /* important to be same as image width or wider */
+    position: absolute; /* important */
+    top: 0; /* important */
+    margin: 0 0 0 -40px; /* important */	
+ }
+
+
+ .s3sliderImage {
+    float: left; /* important */
+    position: relative; /* important */
+    display: none; /* important */
+ }
+
+ .s3sliderImage span {
+    position: absolute; /* important */
+    left: 0;
+    font: 10px/15px Arial, Helvetica, sans-serif;
+    padding:15px;
+    width: 971px;
+	margin:9px 0 0 0;
+    background-color: #000;
+    filter: alpha(opacity=70); /* here you can set the opacity of box with text */
+    -moz-opacity: 0.7; /* here you can set the opacity of box with text */
+    -khtml-opacity: 0.7; /* here you can set the opacity of box with text */
+    opacity: 0.7; /* here you can set the opacity of box with text */
+    color: #fff;
+    display: none; /* important */
+    top: 0;
+
+    /*
+        if you put
+        top: 0; -> the box with text will be shown at the top of the image 
+       if you put
+        bottom: 0; -> the box with text will be shown at the bottom of the image
+    */
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+	<!-- 스프링 컨트롤 클래스 선언시 애노테이션을 이용해서
+	작성할 수 있다는 것을 선언하는 뜻이다. -->
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+     <!-- wepapp/resources/ 폴더 하위로 .js,.css,이미지파일등
+    경로이다. -->
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<!-- jsp 즉 화면에 보이는 뷰페이지 폴더 경로. WEB-INF폴더
+		경로에 있는 JSP파일을 직접 실행 안됨.보안효과,뷰페이지 경로
+		도 스프링 컨트롤 클래스에서 기본경로로 인식하기 때문에
+		생략할 수 있다. -->
+		<beans:property name="suffix" value=".jsp" />
+		<!-- 스프링 컨트롤 클래스에서 JSP파일 확장자를 생략할 수
+		있다.JSP확장자 설정부분 -->
+	</beans:bean>
+	
+	<context:component-scan base-package="org.zerock.controller" />
+	<!-- <annotation-driven>과 함께 결합해서 base-package속성에
+설정한 패키지 내부의 컨트롤 클래스를 자동으로 찾아서 애노테이션이
+처리가 된 컨트롤 클래스를 스프링에서 인식할 수 있게 하는 부분
+이다. -->		
+	
+</beans:beans>
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+@CHARSET "UTF-8";
+
+/* welcome.jsp ui */
+#sub_img{
+	width:971px; height:179px;
+	background-image:url(../images/company/sub_back.png);
+	background-repeat:no-repeat;
+	background-position:left top;
+}
+#sub_menu{
+	width:238px; float:left;
+	margin:20px; border:0px solid #ccc;
+	font-family:seo; font-size:1em;
+}
+#sub_menu ul{
+	list-style:none;/*목록앞 마커 점 없앰*/
+	margin:20px 0 0 10px;
+}
+#sub_menu a{
+	text-decoration:none; color:#666;
+	display:block; /*블록요소 태그로 바꿈*/
+	height:15px; width:150px; padding:7px;
+	border-bottom-width:1px;/*밑줄선 두께 */
+	border-bottom-style: dotted;/*밑줄선을 점선*/
+	border-bottom-color: #999;/*밑줄선 색*/
+	background-image:url(../images/bullet.gif);
+	background-repeat:no-repeat;
+	background-position: right center;
+}
+#sub_menu a:hover{
+    background-image:url(../images/bullet_orange.gif);
+    background-repeat: no-repeat;
+    background-position: right center;
+    color: #F90;	
+}
+#wel_cont{
+	float:right; width:676px; border:0px solid #ccc;
+	margin-right:14px;
+}
+#wel_cont h1{
+	font-family:seo; font-size:45px;
+	color:#ccc; margin:20px 0px; font-weight:bold;
+}
+#wel_cont p{
+	padding-left:10px;
+}
+#wel_cont .ceo{
+	float:right; margin:5px;
+}
+figcaption{text-align:center; color:#39F;}
+
+/* history.jsp ui */
+#wel_cont .y2017, #wel_cont .y2016,#wel_cont .y2015{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #999;
+}
+#wel_cont .y2017 h3,#wel_cont .y2016 h3,
+#wel_cont .y2015 h3{
+	font-family:seo; font-size:16px; 
+}
+#wel_cont .h_title{
+	padding:7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,199 @@
+@CHARSET "UTF-8";
+
+/* notice.jsp ui */
+#sub_img_center{
+	width:971px; height:179px;
+	background-image:url(/resources/images/center/sub_back.png);
+	background-repeat:no-repeat;
+	background-position:left top;
+}
+#notice{
+	width:670px; border-collapse: collapse;
+	border:0px solid blue;
+}
+#notice th{
+	height:20px; 
+	text-transform: capitalize;
+	/*제목 영문 첫글자를 대문자*/
+	font-size:14px; font-family:seo; font-weight:bold;
+	padding:5px; 
+    background-image:url(/resources/images/center/t_back.jpg);
+    background-repeat: repeat-x;
+    background-position: center center;
+    color:#FFF; text-align:center;/*좌우 중앙 정렬 */	
+}
+#notice td{
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #999;
+	text-align:center; padding:6px 0px;
+}
+#notice .left{
+	text-align:left;
+}
+#notice .tno{
+	border-top-left-radius: 5px;/*테두리 좌상단을 둥글게*/
+	border-bottom-left-radius:5px;/*테두리 좌하단을 
+	둥글게 */
+	width:50px; 
+}
+#notice .ttitle{
+	width:400px; 
+	letter-spacing: 0.7em;/*title 글자간 간격 */
+}
+#notice .twrite{
+	width:100px;
+}
+#notice .tdate{width:50px;}
+#notice .tread{
+	border-top-right-radius:5px;/*우상향 테두리를 둥글게*/
+	border-bottom-right-radius:5px;
+	/*우하향 테두리를 둥글게*/
+	width:50px;
+}
+#table_search{
+	float:right; margin:15px 0 10px 0;
+}
+#table_search .input_box{
+	height:20px; width:200px; border:1px solid #333;
+	border-radius:10px; background-color:#FEFDED;
+}
+#table_search .btn{
+    padding:2px; margin:0 0 0 5px; width:90px;
+    height:23px; border:1px solid #999;
+    border-radius:10px; color:#FFF;
+    background-image:url(/resources/images/center/t_back.jpg);
+    background-repeat:repeat-x;
+    background-position: center center;	
+}
+#page_control{
+	margin-left:auto; margin-right:auto;/*div 좌우 중앙
+	정렬*/
+	text-align:center; margin:20px 0 0 0;
+}
+#page_control a{
+	text-decoration: none; padding:2px 5px;
+	color:#333; margin:0 5px;
+}
+#page_control a:hover{
+	text-decoration: underline; font-weight: bold;
+	color:#F90;
+}
+#notice tr:hover{
+	cursor:hand; cursor:pointer;/*손가락모양*/
+    background-color:gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

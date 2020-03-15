@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+  <!-- 도메인 데이터 저장빈 클래스 별칭 객체를 관리하는 mybatis
+  환경설정 태그이다. -->
+  <typeAliases>
+     <typeAlias alias="board" 
+     type="org.zerock.domain.BoardVO"/>
+     <typeAlias alias="admin" 
+     type="org.zerock.domain.AdminVO"/> 
+     <typeAlias alias="m" 
+     type="org.zerock.domain.MemberVO"/> 
+     <typeAlias alias="z" 
+     type="org.zerock.domain.ZipcodeVO"/> 
+     <typeAlias alias="bbs" 
+     type="org.zerock.domain.BbsVO"/>
+     <typeAlias alias="gongji" 
+     type="org.zerock.domain.GongjiVO"/>   
+     <!-- GonjiVO 클래스 별칭명 객체를 gongji로 설정 -->        
+  </typeAliases>
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

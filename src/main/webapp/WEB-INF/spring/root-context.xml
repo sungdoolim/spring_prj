@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<!--  aop 자동 프록시 설정한다. 이 의미는 직접적인 호출
+	이 아니라 실제 객체(target)를 호출하기 위해 먼저 프록시를
+	간접적인 호출을 하는 것을 의미한다. 이 프록시를 통해 실제
+	객체를 호출 전달한다. 자동으로 AspectJ 라이브러리를 통해
+	프록시 객체를 생성해 내는 용도로 사용된다. -->
+	
+	<!-- 스프링으로 오라클 jdbc연결 -->
+	<bean id="dataSource"
+class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+  <property name="driverClassName" 
+  value="oracle.jdbc.OracleDriver" />
+  <property name="url" value=
+  "jdbc:oracle:thin:@127.0.0.1:1521:xe"/>
+  <property name="username" value="night" />
+  <property name="password" value="1234" />
+</bean>
+		
+	<!-- mybatis와 스프링을 연결하고 거기서 데이터베이스를 연
+	결해서 mybatis 매퍼 xml태그로 쿼리문을 실행가능하게 한다 -->
+	<bean id="sqlSessionFactory"
+class="org.mybatis.spring.SqlSessionFactoryBean">
+     <property name="dataSource" ref="dataSource" />
+     <!-- mybatis에서 스프링을 연결하면서 의존성 주입하고 빈아이디
+     를 호출 -->
+     <property name="configLocation" 
+     value="classpath:/mybatis-config.xml"/>
+     <!-- mybatis에서 도메인 데이터 저장빈 클래스 를 관리하는
+     환경설정 태그이다. classpath경로는 src/main/resources이고,
+     이 경로에 mybatis-config.xml파일이 있어야 한다.-->
+     <property name="mapperLocations"
+     value="classpath:org/zerock/mappers/*/*.xml" />
+     <!-- mybatis에서 쿼리문을 다루는 매퍼태그 위치 -->
+</bean>	
+
+   <!-- 트랜잭션 매니저(관리자) 설정(트랜잭션 처리) -->
+   <bean id="transactionManager"
+   class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+   <property name="dataSource" ref="dataSource" />
+   <!-- dataSource의존성 주입 -->
+</bean>   
+<tx:annotation-driven/><!-- 트랜잭션 설정 애너테이션,
+@Transactional 애너테이션을 이용한 트랜잭션 관리를 가능하게 함-->
+   
+   <!-- mybatis쿼리문 실행객체 sqlSession정의,생성자를
+   통한 의존성 주입 -->
+   <bean id="sqlSession" 
+   class="org.mybatis.spring.SqlSessionTemplate"
+   destroy-method="clearCache">
+   <!-- SqlSessionTemplate클래스가 mybatis쿼리문 실행클래스 -->
+   <constructor-arg name="sqlSessionFactory" 
+   ref="sqlSessionFactory" /><!-- 생성자를 통한 의존성 주입 -->
+   </bean>   
+   
+   <!-- DAOImpl에 @Repository 설정하고,자동스캔 태그를 사용하
+   면 별도의 빈아이디를 설정하지 않아도 스프링에서 해당 패키지
+   경로 하위의 모든 클래스에 스프링 빈에 자동으로 등록 -->
+   <context:component-scan 
+   base-package="org.zerock.persistence"/>
+   
+   <!-- 서비스 패키지를 자동 스캔기능으로 스프링에 등록 -->
+   <context:component-scan
+    base-package="org.zerock.service" />
+    
+    <!-- aop 패키지를 자동 스캔기능으로 스프링에 등록 -->
+    <context:component-scan 
+    base-package="org.zerock.aop"/>
+    
+    <aop:config></aop:config><!-- 차후에 xml방식으로 aop
+    기능을 설정할 수 있게 환경설정태그 추가 -->
+</beans>
+
+
+

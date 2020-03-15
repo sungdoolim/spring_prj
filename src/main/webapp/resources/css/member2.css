@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+
+/* join.jsp ui */
+#sub_img_member{
+	width:971px; height:179px;
+	background-image:url(../images/member/sub_back.png);
+	background-repeat:no-repeat;
+	background-position:left top;
+}
+form#join{
+	width:670px; margin:10px 0 0 0;
+}
+form#join fieldset{
+	border:none;/*그룹경계선을 없앰*/
+	padding:10px 0 20px 5px;
+}
+form#join fieldset legend{
+	font-family:seo; font-size:20px;
+	border-bottom:1px dotted #666;/*아래쪽 밑줄점선 */
+	width:600px; padding:5px 0; font-weight:bold;
+}
+#join label{
+	width:140px; float:left; margin:5px 0;
+}
+#join input{
+    margin:5px 0; border:1px solid #999;
+    background-color:#FCFDEA;	
+}
+#join .id{
+	width:100px; height:18px;
+}
+#join .dup{
+	width:120px; height:23px;
+	border-radius:8px; border:none;/*테두리를 없앰*/
+	margin:0 0 0 5px; font-weight:bold;
+	color:#FFF; 
+    background-image:url(../images/member/dup.jpg);
+    background-repeat:repeat-x;
+    background-position: center center;	
+}
+#buttons{
+	margin:20px 0 0 0;
+}
+#buttons .submit, #buttons .cancel{
+	height:30px; width:150px;
+	border:1px solid #666; border-radius:10px;
+	box-shadow:3px 3px 2px #ccc;
+	font-size:14px;
+}
+#buttons .submit{
+ background-image:url(../images/member/submit_back.jpg);
+ background-repeat:repeat-x;
+ background-position: center center;
+ color:#fff;
+}
+#buttons .cancel{
+ background-image:url(../images/member/cancel_back.jpg);
+ background-repeat:repeat-x;
+ background-position:center center;
+ margin:0 0 0 20px;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
